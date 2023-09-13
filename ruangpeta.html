@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Sistem Pemanfaatan Ruang | Kota Yogyakarta</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/Kota_Yogyakarta-logo-828E536380-seeklogo.com.png" rel="icon">
+  <link href="assets/img/Kota_Yogyakarta-logo-828E536380-seeklogo.com.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets\vendor\aos\aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets\vendor\quill\quill.snow.css" rel="stylesheet">
+  <link href="assets\vendor\quill\quill.bubble.css" rel="stylesheet">
+  <link href="assets\vendor\remixicon\remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="assets\vendor\glightbox\css\glightbox.css" rel="stylesheet">
+  <link href="assets\vendor\remixicon\remixicon.css" rel="stylesheet">
+  <link href="assets\vendor\swiper\swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/awesomplete@1.1.3/awesomplete.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v6.4.3/css/ol.css">
+
+  <!-- Open Layers -->
+  <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v6.4.3/build/ol.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets\js\main_nice.js"></script>
+  <script
+    src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+  <script src="https://unpkg.com/awesomplete@1.1.3/awesomplete.min.js" async></script>
+
+  <!-- Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets\css\style_nice.css" rel="stylesheet">
+  <link href="assets\css\style_map.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="beranda.html"><span>Ruang</span>Cerdas</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="beranda.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a href="beranda.html">Beranda</a></li>
+          <li><a href="Ruangpedia.html">Ruangpedia</a></li>
+          <li><a href="ruangpeta.html" class="active">Ruangpeta</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <div class="header-social-links d-flex">
+        <a href="https://twitter.com/pemkotjogja?lang=en" class="twitter"><i class="bu bi-twitter"
+            title="Twitter"></i></a>
+        <a href="https://www.facebook.com/humaskotajogja/?locale=id_ID" class="facebook" title="Facebook"><i
+            class="bu bi-facebook"></i></a>
+        <a href="https://www.instagram.com/pemkotjogja/?hl=en" class="instagram"><i class="bu bi-instagram"
+            title="Instagram"></i></a>
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Breadcrumbs ======= -->
+  <section id="breadcrumbs" class="breadcrumbs fixed-top">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Ruangpeta</h2>
+        <ol>
+          <li><a href="beranda.html">Beranda</a></li>
+          <li><a href="ruangpeta.html">Ruangpeta</a></li>
+        </ol>
+      </div>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <main id="main" class="main">
+
+    <section class="section dashboard">
+      <div class="row">
+
+        <!-------- Main Page -------->
+        <div class="col-15">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Peta Lokasi IMB dan SKRK di Kota Yogyakarta</h5>
+              <div id="map"></div>
+
+              <div id="popup" class="popup">
+                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+                <div id="popup-content"
+                  style="font-family: 'Open Sans', sans-serif; font-size: 13px; color: #03318C; line-height: 0.5;">
+                  <!-- Konten Anda disini -->
+                </div>
+              </div>
+
+              <div class="control-container">
+                <div class="controls">
+                  <button id="zoom-in" class="btn btn-light"><i class="bi bi-zoom-in" title="Zoom In"></i></button>
+                  <button id="zoom-out" class="btn btn-light"><i class="bi bi-zoom-out" title="Zoom Out"></i></button>
+                  <button id="fullscreen" class="btn btn-light"><i class="bi bi-fullscreen"
+                      title="Fullscreen"></i></button>
+                  <button id="geolocate" class="btn btn-light"><i class="bi bi-geo-alt"
+                      title="Lokasi Saya"></i></button>
+
+                  <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="basemap-dropdown"
+                      data-bs-toggle="dropdown">
+                      <i class="bi bi-map"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="basemap-dropdown">
+                      <li><a class="dropdown-item" href="#" id="basemap-osm">OpenStreetMap</a></li>
+                      <li><a class="dropdown-item" href="#" id="basemap-google-satellite">Google Satellite</a></li>
+                      <li><a class="dropdown-item" href="#" id="basemap-google-terrain">Google Terrain</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="search-container">
+                  <input type="text" id="search-input" placeholder="Cari..." />
+                  <button id="search-button" class="btn btn-primary"><i class="bi bi-search"></i></button>
+                </div>
+
+                <div class="legend" id="legend-container">
+                  <h6>Legenda</h6>
+
+                  <div class="legend2">
+                    <input type="checkbox" id="checkboxAdministrasi">
+                    <label for="checkboxAdministrasi">
+                      <span class="legend-icon"
+                        style="background-color: rgba(255, 255, 255, 0); border: 2px solid rgba(38, 60, 133, 0.75);"></span>
+                      <span class="legend-label">Batas Administrasi</span>
+                    </label>
+                  </div>
+
+                  <div class="legend2">
+                    <span class="legend-label" style="font-weight: bold; font-size: 14px;">Data SKRK</span>
+                  </div>
+
+                  <div class="legend4">
+                    <span class="legend-label" style="font-weight: bold; font-size: 13px;">Tahun</span>
+                  </div>
+
+                  <div class="legend5">
+                    <input type="checkbox" id="checkboxSKRK19">
+                    <label for="checkboxSKRK19"><span class="legend-icon"
+                        style="background-color:#64C6C2; border: 1.5px solid #231F20"></span>
+                      <span class="legend-label">2019</span>
+                    </label>
+                  </div>
+
+                  <div class="legend5">
+                    <input type="checkbox" id="checkboxSKRK20">
+                    <label for="checkboxSKRK20"><span class="legend-icon"
+                        style="background-color: #FAA41A; border: 1.5px solid #231F20"></span>
+                      <span class="legend-label">2020</span></label>
+                  </div>
+
+                  <div class="legend5">
+                    <input type="checkbox" id="checkboxSKRK21">
+                    <label for="checkboxSKRK21"><span class="legend-icon"
+                        style="background-color: #7C287D; border: 1.5px solid #231F20"></span>
+                      <span class="legend-label">2021</span></label>
+                  </div>
+
+                  <div class="legend4">
+                    <span class="legend-label" style="font-weight: bold; font-size: 13px;">Status IMB</span>
+                  </div>
+
+                  <div class="legend5">
+                    <input type="checkbox" id="checkboxberIMB">
+                    <label for="checkboxberIMB"><span class="legend-icon"
+                        style="background-color: #05D928; border: 1.5px solid #231F20"></span>
+                      <span class="legend-label">Memiliki IMB</span>
+                    </label>
+                  </div>
+
+                  <div class="legend5">
+                    <input type="checkbox" id="checkboxblmberIMB">
+                    <label for="checkboxblmberIMB"><span class="legend-icon"
+                        style="background-color: #D92805; border: 1.5px solid #231F20"></span>
+                      <span class="legend-label">Belum Memiliki IMB</span></label>
+                  </div>
+
+                  <div class="legend2">
+                    <span class="legend-label" style="font-weight: bold; font-size: 14px;">Data IMB</span>
+                  </div>
+
+                  <div class="legend5">
+                    <input type="checkbox" id="checkboxIMB19">
+                    <label for="checkboxIMB19"><span class="legend-icon"
+                        style="background-color: #FDFF00; border: 1.5px solid #231F20"></span>
+                      <span class="legend-label">2019</span>
+                    </label>
+                  </div>
+
+                  <div class="legend5">
+                    <input type="checkbox" id="checkboxIMB21">
+                    <label for="checkboxIMB21"><span class="legend-icon"
+                        style="background-color: #0200FF; border: 1.5px solid #231F20"></span>
+                      <span class="legend-label">2021</span></label>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      </div><!-------- End Main Page -------->
+
+      </div>
+
+
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+          // --------------- Inisiasi Peta --------------
+          var map = new ol.Map({
+            target: 'map',
+            layers: [
+              new ol.layer.Tile({
+                source: new ol.source.OSM()
+              })
+            ],
+            view: new ol.View({
+              center: ol.proj.fromLonLat([110.37335536076372, -7.801061847950339]),
+              zoom: 13
+            }),
+            controls: []
+          });
+          // -------------- End Inisiasi Peta --------------
+
+
+
+
+          // -------------- Control Button --------------
+          var controlContainer = document.querySelector('.control-container');
+
+
+          // -------------- Zoom In, Zoom Out dan Full Screen Button --------------
+          var zoomInButton = controlContainer.querySelector('#zoom-in');
+          zoomInButton.innerHTML = '<i class="bi bi-zoom-in"></i>';
+
+          var zoomOutButton = controlContainer.querySelector('#zoom-out');
+          zoomOutButton.innerHTML = '<i class="bi bi-zoom-out"></i>';
+
+          var fullScreenButton = controlContainer.querySelector('#fullscreen');
+          fullScreenButton.innerHTML = '<i class="bi bi-fullscreen"></i>';
+
+          zoomInButton.addEventListener('click', function () {
+            var view = map.getView();
+            var zoom = view.getZoom();
+            view.setZoom(zoom + 1);
+          });
+
+          zoomOutButton.addEventListener('click', function () {
+            var view = map.getView();
+            var zoom = view.getZoom();
+            view.setZoom(zoom - 1);
+          });
+
+          fullScreenButton.addEventListener('click', function () {
+            var element = document.getElementById('map');
+            if (element.requestFullscreen) {
+              element.requestFullscreen();
+            } else if (element.mozRequestFullScreen) {
+              element.mozRequestFullScreen();
+            } else if (element.webkitRequestFullscreen) {
+              element.webkitRequestFullscreen();
+            } else if (element.msRequestFullscreen) {
+              element.msRequestFullscreen();
+            }
+          });
+          // -------------- End of Zoom In, Zoom Out dan Full Screen Button --------------
+
+
+          // -------------- Geolocation Button --------------
+          var geolocateButton = controlContainer.querySelector('#geolocate');
+          geolocateButton.innerHTML = '<i class="bi bi-geo-alt"></i>';
+
+          geolocateButton.addEventListener('click', function () {
+            if ("geolocation" in navigator) {
+              navigator.geolocation.getCurrentPosition(function (position) {
+                var coords = ol.proj.fromLonLat([position.coords.longitude, position.coords.latitude]);
+                map.getView().setCenter(coords);
+                map.getView().setZoom(18);
+
+                var vectorLayer = map.getLayers().item(1);
+                if (vectorLayer) {
+                  map.removeLayer(vectorLayer);
+                }
+
+                var marker = new ol.Feature({
+                  geometry: new ol.geom.Point(coords)
+                });
+
+                var iconStyle = new ol.style.Style({
+                  image: new ol.style.Icon({
+                    src: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/icons/geo-alt-fill.svg',
+                    scale: 1.3,
+                    color: 'rgb(38, 60, 133)'
+                  })
+                });
+
+                marker.setStyle(iconStyle);
+
+                var vectorSource = new ol.source.Vector({
+                  features: [marker]
+                });
+
+                var vectorLayer = new ol.layer.Vector({
+                  source: vectorSource
+                });
+
+                map.addLayer(vectorLayer);
+              });
+            } else {
+              alert('Geolocation tidak didukung pada browser ini.');
+            }
+          });
+          // -------------- End of Geolocation Button --------------
+
+
+          // -------------- Basemap Button --------------
+          var basemapOSM = controlContainer.querySelector('#basemap-osm');
+          basemapOSM.addEventListener('click', function (evt) {
+            map.getLayers().setAt(0, new ol.layer.Tile({
+              source: new ol.source.OSM()
+            }));
+            clearActiveDropdownItems();
+            basemapOSM.classList.add('active');
+          });
+
+          var basemapGoogleSatellite = controlContainer.querySelector('#basemap-google-satellite');
+          basemapGoogleSatellite.addEventListener('click', function (evt) {
+            map.getLayers().setAt(0, new ol.layer.Tile({
+              source: new ol.source.XYZ({
+                url: 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
+                maxZoom: 19
+              })
+            }));
+            clearActiveDropdownItems();
+            basemapGoogleSatellite.classList.add('active');
+          });
+
+          var basemapGoogleTerrain = controlContainer.querySelector('#basemap-google-terrain');
+          basemapGoogleTerrain.addEventListener('click', function (evt) {
+            map.getLayers().setAt(0, new ol.layer.Tile({
+              source: new ol.source.XYZ({
+                url: 'https://mt1.google.com/vt/lyrs=p&x={x}&y={y}&z={z}',
+                maxZoom: 19
+              })
+            }));
+            clearActiveDropdownItems();
+            basemapGoogleTerrain.classList.add('active');
+          });
+
+          function clearActiveDropdownItems() {
+            var dropdownItems = controlContainer.querySelectorAll('.dropdown-item');
+            dropdownItems.forEach(function (item) {
+              item.classList.remove('active');
+            });
+          }
+
+          var dropdownToggles = controlContainer.querySelectorAll('.dropdown-toggle');
+          dropdownToggles.forEach(function (dropdownToggle) {
+            new bootstrap.Dropdown(dropdownToggle);
+          });
+          // -------------- End of Basemap Button --------------
+          // -------------- End Control Button --------------
+
+
+
+          // -------------- Search Button --------------
+          var searchButton = controlContainer.querySelector('#search-button');
+          var searchInput = controlContainer.querySelector('#search-input');
+          var selectedFeature = null;
+
+
+          searchButton.addEventListener('click', function () {
+            var searchText = searchInput.value;
+
+            if (searchText !== '') {
+              // Hapus highlight dan pop-up sebelumnya
+              var features = skrk19Layer.getSource().getFeatures();
+              for (var i = 0; i < features.length; i++) {
+                var feature = features[i];
+                var featureStyle = feature.getStyle();
+                feature.setStyle(geojsonStyle);
+                if (feature.get('highlighted')) {
+                  feature.set('highlighted', false);
+                }
+              }
+
+              // Cari fitur yang sesuai dengan teks pencarian
+              var searchFeatures = skrk19Layer.getSource().getFeatures().filter(function (feature) {
+                var nama = feature.get('Nama');
+                return nama.toLowerCase().includes(searchText.toLowerCase());
+              });
+
+              if (searchFeatures.length > 0) {
+                // ... (Kode yang sudah ada untuk menampilkan poligon yang sesuai dengan teks pencarian)
+
+                // Perbarui tampilan peta
+                skrk19Layer.changed();
+
+                var selectedFeature = getFeatureByName(searchText);
+                if (selectedFeature) {
+                  zoomToFeature(selectedFeature);
+                }
+              }
+            }
+
+          });
+
+          function zoomToFeature(feature) {
+
+            // Menghapus gaya khusus dari poligon yang sudah dipilih sebelumnya
+            if (selectedFeature) {
+              selectedFeature.setStyle(geojsonStyle);
+            }
+
+            // Menyimpan poligon yang dipilih
+            selectedFeature = feature;
+
+            // Mengubah gaya poligon yang dipilih
+            var selectedStyle = new ol.style.Style({
+              fill: new ol.style.Fill({
+                color: 'rgba(255, 255, 167, 1)' // Ganti dengan warna yang Anda inginkan
+              }),
+              stroke: new ol.style.Stroke({
+                color: '#000000',
+                width: 2
+              })
+            });
+            feature.setStyle(selectedStyle);
+
+          }
+
+          function getFeatureByName(name) {
+            var features = skrk19Layer.getSource().getFeatures();
+            for (var i = 0; i < features.length; i++) {
+              var feature = features[i];
+              if (feature.get('Nama').toLowerCase() === name.toLowerCase()) {
+                return feature;
+              }
+            }
+            return null;
+          }
+
+          function zoomToFeature(feature) {
+            var geometry = feature.getGeometry();
+            var extent = geometry.getExtent();
+            map.getView().fit(extent, { duration: 1000 }); // Melakukan zoom ke fitur dengan animasi selama 1 detik
+          }
+
+          // Fungsi untuk menampilkan saran (suggestions) saat pengguna mengetik di input pencarian
+          var awesomplete = new Awesomplete(searchInput, {
+            minChars: 1,
+            maxItems: 10,
+            autoFirst: true,
+            list: []
+          });
+
+          searchInput.addEventListener('input', function () {
+            var inputText = searchInput.value.toLowerCase();
+            var suggestions = [];
+
+            skrk19Layer.getSource().getFeatures().forEach(function (feature) {
+              var nama = feature.get('Nama').toLowerCase();
+              if (nama.includes(inputText)) {
+                suggestions.push(nama);
+              }
+            });
+
+            awesomplete.list = suggestions;
+          });
+
+          searchInput.addEventListener('awesomplete-selectcomplete', function (event) {
+            var selectedFeatureName = event.text.value; // Nama fitur yang dipilih dari saran
+            var selectedFeature = getFeatureByName(selectedFeatureName); // Fungsi untuk mendapatkan fitur berdasarkan nama
+
+            if (selectedFeature) {
+              zoomToFeature(selectedFeature); // Fungsi untuk melakukan zoom ke fitur yang dipilih
+            }
+
+            if (selectedFeature && selectedFeature !== newSelectedFeature) {
+              // Mengembalikan gaya poligon yang sudah dipilih sebelumnya
+              selectedFeature.setStyle(geojsonStyle);
+            }
+
+            selectedFeature = newSelectedFeature;
+
+            // ...
+          });
+
+          // -------------- End of Search Button --------------
+
+
+
+
+
+
+          // -------------- Add Data --------------
+          // -------------- Data Batas Administrasi --------------
+          var batasAdminSource = new ol.source.Vector({
+            url: 'assets/Data/batas adm.geojson',
+            format: new ol.format.GeoJSON()
+          });
+
+          var batasAdminStyle = new ol.style.Style({
+            fill: new ol.style.Fill({
+              color: 'rgba(255, 255, 255, 0)'
+            }),
+            stroke: new ol.style.Stroke({
+              color: 'rgba(38, 60, 133, 1)',
+              width: 2
+            })
+          });
+
+          var batasAdminLayer = new ol.layer.Vector({
+            source: batasAdminSource,
+            style: batasAdminStyle,
+            visible: true
+          });
+          map.addLayer(batasAdminLayer);
+          // -------------- End of Data Batas Administrasi --------------
+
+
+          // -------------- Data SKRK --------------
+
+          // ----------------- SKRK 2019 ----------------------
+          var skrk19Source = new ol.source.Vector({
+            url: 'assets/Data/Data_SKRK 2019 RDTR 2015 - 2035_WGS84.geojson',
+            format: new ol.format.GeoJSON(),
+          });
+
+          var skrk19Style = new ol.style.Style({
+            fill: new ol.style.Fill({
+              color: '#64C6C2'
+            }),
+            stroke: new ol.style.Stroke({
+              color: '#231F20',
+              width: 1.5
+            })
+          });
+
+          var skrk19Layer = new ol.layer.Vector({
+            source: skrk19Source,
+            style: skrk19Style,
+            visible: true
+          });
+
+          // Tambahkan layer "skrk19" ke peta
+          map.addLayer(skrk19Layer);
+
+          // Definisikan overlay untuk popup
+          // Create a new overlay for the pop-up
+          var popupElement = document.querySelector('.popup');
+          var popupContentElement = document.getElementById('popup-content');
+
+          var overlay = new ol.Overlay({
+            element: popupElement,
+            positioning: 'top-center',
+            stopEvent: false,
+          });
+          map.addOverlay(overlay);
+
+          // Handle pointermove event on the GeoJSON layer to show pop-up on hover
+          map.on('pointermove', function (event) {
+            var pixel = map.getEventPixel(event.originalEvent);
+            var feature = map.forEachFeatureAtPixel(pixel, function (feature) {
+              return feature;
+            });
+
+            if (feature) {
+              var coordinate = event.coordinate;
+
+              // Dapatkan atribut yang Anda inginkan dari fitur
+              var nama = feature.get('Nama');
+              var nomorSertifikat = feature.get('No_Sertif');
+              var nomorSKRK = feature.get('No_SKRK');
+              var perizinan = feature.get('perizinan');
+              var kelurahan = feature.get('Kelurahan');
+              var T_Kegiatan = feature.get('T_Kegiatan');
+              var T_Zonasi = feature.get('T_Zonasi');
+
+              // Buat isi popup dengan atribut yang Anda dapatkan
+              var content =
+                '<p><strong>Nama:</strong> ' + nama + '</p>' +
+                '<p><strong>Nomor Sertifikat:</strong> ' + nomorSertifikat + '</p>' +
+                '<p><strong>Nomor SKRK:</strong> ' + nomorSKRK + '</p>' +
+                '<p><strong>Perizinan:</strong> ' + perizinan + '</p>' +
+                '<p><strong>Kelurahan:</strong> ' + kelurahan + '</p>' +
+                '<p><strong>Klasifikasi Kegiatan:</strong> ' + T_Kegiatan + '</p>' +
+                '<p><strong>Klasifikasi Zonasi:</strong> ' + T_Zonasi + '</p>';
+
+              showPopup(coordinate, content);
+            } else {
+              hidePopup();
+            }
+          });
+
+          // Definisikan fungsi untuk menampilkan popup
+          function showPopup(coordinate, content) {
+            var popupElement = document.querySelector('.popup');
+            var popupContentElement = document.getElementById('popup-content');
+
+            overlay.setPosition(coordinate);
+            popupContentElement.innerHTML = content;
+            popupElement.style.display = 'block';
+          }
+
+          function hidePopup() {
+            var popupElement = document.querySelector('.popup');
+            var popupContentElement = document.getElementById('popup-content');
+
+            overlay.setPosition(undefined);
+            popupContentElement.innerHTML = '';
+            popupElement.style.display = 'none';
+          }
+
+          // ----------------- End of SKRK 2019 ----------------------
+
+
+          // ----------------- SKRK 2020 ----------------------
+          var skrk20Source = new ol.source.Vector({
+            url: 'assets/Data/Data_SKRK 2020 RDTR 2015 - 2035_WGS84.geojson',
+            format: new ol.format.GeoJSON()
+          });
+
+          var skrk20Style = new ol.style.Style({
+            fill: new ol.style.Fill({
+              color: '#FAA41A'
+            }),
+            stroke: new ol.style.Stroke({
+              color: '#231F20',
+              width: 1.5
+            })
+          });
+
+          var skrk20Layer = new ol.layer.Vector({
+            source: skrk20Source,
+            style: skrk20Style,
+            visible: true
+          });
+          map.addLayer(skrk20Layer);
+
+          // Definisikan overlay untuk popup
+          // Create a new overlay for the pop-up
+          var popupElement = document.querySelector('.popup');
+          var popupContentElement = document.getElementById('popup-content');
+
+          var overlay = new ol.Overlay({
+            element: popupElement,
+            positioning: 'top-center',
+            stopEvent: false,
+          });
+          map.addOverlay(overlay);
+
+          // Handle pointermove event on the GeoJSON layer to show pop-up on hover
+          map.on('pointermove', function (event) {
+            var pixel = map.getEventPixel(event.originalEvent);
+            var feature = map.forEachFeatureAtPixel(pixel, function (feature) {
+              return feature;
+            });
+
+            if (feature) {
+              var coordinate = event.coordinate;
+
+              // Dapatkan atribut yang Anda inginkan dari fitur
+              var nama = feature.get('Nama');
+              var nomorSertifikat = feature.get('No_Sertif');
+              var nomorSKRK = feature.get('No_SKRK');
+              var perizinan = feature.get('perizinan');
+              var kelurahan = feature.get('Kelurahan');
+              var T_Kegiatan = feature.get('T_Kegiatan');
+              var T_Zonasi = feature.get('T_Zonasi');
+
+              // Buat isi popup dengan atribut yang Anda dapatkan
+              var content =
+                '<p><strong>Nama:</strong> ' + nama + '</p>' +
+                '<p><strong>Nomor Sertifikat:</strong> ' + nomorSertifikat + '</p>' +
+                '<p><strong>Nomor SKRK:</strong> ' + nomorSKRK + '</p>' +
+                '<p><strong>Perizinan:</strong> ' + perizinan + '</p>' +
+                '<p><strong>Kelurahan:</strong> ' + kelurahan + '</p>' +
+                '<p><strong>Klasifikasi Kegiatan:</strong> ' + T_Kegiatan + '</p>' +
+                '<p><strong>Klasifikasi Zonasi:</strong> ' + T_Zonasi + '</p>';
+
+              showPopup(coordinate, content);
+            } else {
+              hidePopup();
+            }
+          });
+
+          // Definisikan fungsi untuk menampilkan popup
+          function showPopup(coordinate, content) {
+            var popupElement = document.querySelector('.popup');
+            var popupContentElement = document.getElementById('popup-content');
+
+            overlay.setPosition(coordinate);
+            popupContentElement.innerHTML = content;
+            popupElement.style.display = 'block';
+          }
+
+          function hidePopup() {
+            var popupElement = document.querySelector('.popup');
+            var popupContentElement = document.getElementById('popup-content');
+
+            overlay.setPosition(undefined);
+            popupContentElement.innerHTML = '';
+            popupElement.style.display = 'none';
+          }
+
+          // ----------------- End of SKRK 2020 ----------------------
+
+          // ----------------- SKRK 2021 ----------------------
+          var skrk21Source = new ol.source.Vector({
+            url: 'assets/Data/Data_SKRK 2021 RDTR 2015 - 2035_WGS84.geojson',
+            format: new ol.format.GeoJSON()
+          });
+
+          var skrk21Style = new ol.style.Style({
+            fill: new ol.style.Fill({
+              color: '#7C287D'
+            }),
+            stroke: new ol.style.Stroke({
+              color: '#231F20',
+              width: 1.5
+            })
+          });
+
+          var skrk21Layer = new ol.layer.Vector({
+            source: skrk21Source,
+            style: skrk21Style,
+            visible: true
+          });
+          map.addLayer(skrk21Layer);
+
+          // Definisikan overlay untuk popup
+          // Create a new overlay for the pop-up
+          var popupElement = document.querySelector('.popup');
+          var popupContentElement = document.getElementById('popup-content');
+
+          var overlay = new ol.Overlay({
+            element: popupElement,
+            positioning: 'top-center',
+            stopEvent: false,
+          });
+          map.addOverlay(overlay);
+
+          // Handle pointermove event on the GeoJSON layer to show pop-up on hover
+          map.on('pointermove', function (event) {
+            var pixel = map.getEventPixel(event.originalEvent);
+            var feature = map.forEachFeatureAtPixel(pixel, function (feature) {
+              return feature;
+            });
+
+            if (feature) {
+              var coordinate = event.coordinate;
+
+              // Dapatkan atribut yang Anda inginkan dari fitur
+              var nama = feature.get('Nama');
+              var nomorSertifikat = feature.get('No_Sertif');
+              var nomorSKRK = feature.get('No_SKRK');
+              var perizinan = feature.get('perizinan');
+              var kelurahan = feature.get('Kelurahan');
+              var T_Kegiatan = feature.get('T_Kegiatan');
+              var T_Zonasi = feature.get('T_Zonasi');
+
+              // Buat isi popup dengan atribut yang Anda dapatkan
+              var content =
+                '<p><strong>Nama:</strong> ' + nama + '</p>' +
+                '<p><strong>Nomor Sertifikat:</strong> ' + nomorSertifikat + '</p>' +
+                '<p><strong>Nomor SKRK:</strong> ' + nomorSKRK + '</p>' +
+                '<p><strong>Perizinan:</strong> ' + perizinan + '</p>' +
+                '<p><strong>Kelurahan:</strong> ' + kelurahan + '</p>' +
+                '<p><strong>Klasifikasi Kegiatan:</strong> ' + T_Kegiatan + '</p>' +
+                '<p><strong>Klasifikasi Zonasi:</strong> ' + T_Zonasi + '</p>';
+
+              showPopup(coordinate, content);
+            } else {
+              hidePopup();
+            }
+          });
+
+          // Definisikan fungsi untuk menampilkan popup
+          function showPopup(coordinate, content) {
+            var popupElement = document.querySelector('.popup');
+            var popupContentElement = document.getElementById('popup-content');
+
+            overlay.setPosition(coordinate);
+            popupContentElement.innerHTML = content;
+            popupElement.style.display = 'block';
+          }
+
+          function hidePopup() {
+            var popupElement = document.querySelector('.popup');
+            var popupContentElement = document.getElementById('popup-content');
+
+            overlay.setPosition(undefined);
+            popupContentElement.innerHTML = '';
+            popupElement.style.display = 'none';
+          }
+
+          // ----------------- End of SKRK 2021 ----------------------
+
+
+
+          // -------------- SKRK Ber-IMB ----------------------------
+          var SKRKBerIMBSource = new ol.source.Vector({
+            url: 'assets/Data/Data_SKRK BerIMB.geojson',
+            format: new ol.format.GeoJSON()
+          });
+
+          var SKRKBerIMBStyle = new ol.style.Style({
+            fill: new ol.style.Fill({
+              color: 'rgba(5, 217, 40)'
+            }),
+            stroke: new ol.style.Stroke({
+              color: '#231F20',
+              width: 1.5
+            })
+          });
+
+          var SKRKBerIMBLayer = new ol.layer.Vector({
+            source: SKRKBerIMBSource,
+            style: SKRKBerIMBStyle,
+            visible: true
+          });
+          map.addLayer(SKRKBerIMBLayer);
+          // -------------- End of SKRK Ber-IMB --------------
+
+
+          // -------------- SKRK Belum Ber-IMB ----------------------------
+          var SKRKBlmBerIMBSource = new ol.source.Vector({
+            url: 'assets/Data/Data_SKRK Belum BerIMB.geojson',
+            format: new ol.format.GeoJSON()
+          });
+
+          var SKRKBlmBerIMBStyle = new ol.style.Style({
+            fill: new ol.style.Fill({
+              color: 'rgba(217, 40, 5)'
+            }),
+            stroke: new ol.style.Stroke({
+              color: '#231F20',
+              width: 1.5
+            })
+          });
+
+          var SKRKBlmBerIMBLayer = new ol.layer.Vector({
+            source: SKRKBlmBerIMBSource,
+            style: SKRKBlmBerIMBStyle,
+            visible: true
+          });
+          map.addLayer(SKRKBlmBerIMBLayer);
+          // -------------- End of SKRK Ber-IMB --------------
+          // -------------- End of Data SKRK --------------
+
+
+
+
+          // -------------- Data IMB --------------
+          // -------------- IMB 2019 ----------------
+          var IMB19Source = new ol.source.Vector({
+            url: 'assets/Data/Data_IMB 2019 RDTR 2015 - 2035_WGS84.geojson',
+            format: new ol.format.GeoJSON()
+          });
+
+          var IMB19Style = new ol.style.Style({
+            fill: new ol.style.Fill({
+              color: '#FDFF00'
+            }),
+            stroke: new ol.style.Stroke({
+              color: '#231F20',
+              width: 1.5
+            })
+          });
+
+          var IMB19Layer = new ol.layer.Vector({
+            source: IMB19Source,
+            style: IMB19Style,
+            visible: true
+          });
+          map.addLayer(IMB19Layer);
+          // -------------- End of IMB 2019 ----------------
+
+          // -------------- IMB 2021 ----------------
+          var IMB21Source = new ol.source.Vector({
+            url: 'assets/Data/Data_IMB 2021 RDTR 2015 - 2035_WGS84.geojson',
+            format: new ol.format.GeoJSON()
+          });
+
+          var IMB21Style = new ol.style.Style({
+            fill: new ol.style.Fill({
+              color: '#0200FF'
+            }),
+            stroke: new ol.style.Stroke({
+              color: '#231F20',
+              width: 1.5
+            })
+          });
+
+          var IMB21Layer = new ol.layer.Vector({
+            source: IMB21Source,
+            style: IMB21Style,
+            visible: true
+          });
+          map.addLayer(IMB21Layer);
+          // -------------- End of IMB 2021 ----------------
+          // -------------- End of Data IMB --------------
+
+          // -------------- End of Add Data --------------
+
+
+
+
+          // -------------- Legenda --------------
+          // ---------- Toggle the visibility layer based on the checkbox state ------------
+          var checkboxAdministrasi = document.getElementById('checkboxAdministrasi');
+          checkboxAdministrasi.addEventListener('change', function () {
+            batasAdminLayer.setVisible(checkboxAdministrasi.checked);
+          });
+
+          var checkboxSKRK19 = document.getElementById('checkboxSKRK19');
+          checkboxSKRK19.addEventListener('change', function () {
+            skrk19Layer.setVisible(checkboxSKRK19.checked);
+          });
+
+          var checkboxSKRK20 = document.getElementById('checkboxSKRK20');
+          checkboxSKRK20.addEventListener('change', function () {
+            skrk20Layer.setVisible(checkboxSKRK20.checked);
+          });
+
+          var checkboxSKRK21 = document.getElementById('checkboxSKRK21');
+          checkboxSKRK21.addEventListener('change', function () {
+            skrk21Layer.setVisible(checkboxSKRK21.checked);
+          });
+
+          var checkboxberIMB = document.getElementById('checkboxberIMB');
+          checkboxberIMB.addEventListener('change', function () {
+            SKRKBerIMBLayer.setVisible(checkboxberIMB.checked);
+          });
+
+          var checkboxblmberIMB = document.getElementById('checkboxblmberIMB');
+          checkboxblmberIMB.addEventListener('change', function () {
+            SKRKBlmBerIMBLayer.setVisible(checkboxblmberIMB.checked);
+          });
+
+          var checkboxIMB19 = document.getElementById('checkboxIMB19');
+          checkboxIMB19.addEventListener('change', function () {
+            IMB19Layer.setVisible(checkboxIMB19.checked);
+          });
+
+          var checkboxIMB21 = document.getElementById('checkboxIMB21');
+          checkboxIMB21.addEventListener('change', function () {
+            IMB21Layer.setVisible(checkboxIMB21.checked);
+          });
+          // -----------------------------------------------------
+
+        });
+        // --------------  End of Legenda --------------
+
+
+
+      </script>
+
+    </section>
+
+  </main><!-- End #main -->
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="p-2 flex-fill col-lg-4 col-md-6 footer-contact">
+            <h3>Ruangcerdas</h3>
+            <p>
+              Jl. Tentara Rakyat Mataram No.4, Bumijo <br>
+              Kec. Jetis, Kota Yogyakarta<br>
+              Daerah Istimewa Yogyakarta <br>
+              55231 <br>
+
+              <strong>Phone:</strong> +62274 514448<br>
+              <strong>Email:</strong> dinpertaru@jogjakota.go.id<br>
+            </p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter" style="text-align: right;">
+            <h4>Join Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Ruangcerdas</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/company-free-html-bootstrap-template/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="https://twitter.com/pemkotjogja?lang=en" class="twitter"><i class="bu bi-twitter"
+            title="Twitter"></i></a>
+        <a href="https://www.facebook.com/humaskotajogja/?locale=id_ID" class="facebook" title="Facebook"><i
+            class="bu bi-facebook"></i></a>
+        <a href="https://www.instagram.com/pemkotjogja/?hl=en" class="instagram"><i class="bu bi-instagram"
+            title="Instagram"></i></a>
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+
+
+
+
+</body>
+
+</html>
